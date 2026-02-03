@@ -53,22 +53,21 @@
 .card {
   user-select: none;
 }
-    .love-bg {
+    body.love-bg {
   background-image: url('SRNU7840.JPG');
   background-size: cover;
   background-position: center;
-  position: relative;
-  overflow: hidden;
+  background-repeat: no-repeat;
 }
 
-/* Dark overlay */
-.love-bg::before {
+body.love-bg::before {
   content: "";
-  position: absolute;
+  position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  z-index: 1;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: -1;
 }
+
 
 /* Glass message box */
 .love-message {
@@ -132,7 +131,7 @@
     document.getElementById("question").style.display = "none";
     document.getElementById("buttons").style.display = "none";
 
-    card.classList.add("love-bg");
+    document.body.classList.add("love-bg");
     document.getElementById("msg").style.display = "inline-block";
   }
 </script>
