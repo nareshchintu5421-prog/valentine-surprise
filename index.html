@@ -195,10 +195,10 @@ body.love-bg .card {
   transition: transform 0.6s ease;
 }
 
-/* After YES – desktop */
+/* /* After YES – desktop */
 body.love-bg .card {
   transform: translateX(120px);
-}
+} */
 
 /* After YES – MOBILE (FORCE MOVE RIGHT) */
 @media (max-width: 767px) {
@@ -211,14 +211,29 @@ body {
   justify-content: center;
 }
 
-/* After YES: move card right on MOBILE */
+/* /* After YES: move card right on MOBILE */
 @media (max-width: 767px) {
   body.love-bg {
     justify-content: flex-start;
     padding-left: 15vw;
   }
+} */
+
+/* DEFAULT: card centered */
+.card {
+  position: relative;
 }
 
+/* MOBILE: move card to right-top AFTER YES */
+@media (max-width: 767px) {
+  body.love-bg .card {
+    position: fixed;
+    top: 18%;
+    right: 8%;
+    transform: none;
+    transition: all 0.6s ease;
+  }
+}
 
   </style>
 </head>
