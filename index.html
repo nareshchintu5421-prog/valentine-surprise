@@ -189,6 +189,24 @@ body.love-bg .card {
   transform: translateX(0);
   transition: transform 0.6s ease;
 }
+    /* Default – centered */
+.card {
+  transform: translateX(0);
+  transition: transform 0.6s ease;
+}
+
+/* After YES – desktop */
+body.love-bg .card {
+  transform: translateX(120px);
+}
+
+/* After YES – MOBILE (FORCE MOVE RIGHT) */
+@media (max-width: 767px) {
+  body.love-bg .card {
+    transform: translateX(15vw) !important;
+  }
+}
+
   </style>
 </head>
 
