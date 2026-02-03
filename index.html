@@ -53,6 +53,51 @@
 .card {
   user-select: none;
 }
+    .love-bg {
+  background-image: url('wife.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dark overlay */
+.love-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+/* Glass message box */
+.love-message {
+  display: none;
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  padding: 20px 25px;
+  border-radius: 16px;
+  color: #fff;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.love-message h2 {
+  margin-bottom: 10px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
   </style>
 </head>
 
@@ -65,11 +110,11 @@
     <button class="no" id="noBtn">No</button>
   </div>
 
-  <p id="msg" style="display:none; font-size:20px; margin-top:20px; color:white;">
-    💖 Yayyy! <br>
-    I knew you’d say YES 😍 <br>
-    You’re my Valentine today, tomorrow & forever ❤️
-  </p>
+ <div id="msg" class="love-message">
+  <h2>💖 Yayyy!</h2>
+  <p>I knew you’d say YES 😍</p>
+  <p>You’re my Valentine today,<br>tomorrow & forever ❤️</p>
+</div>
 </div>
 
 
@@ -88,7 +133,7 @@
     document.getElementById("buttons").style.display = "none";
 
     card.classList.add("love-bg");
-    document.getElementById("msg").style.display = "block";
+    document.getElementById("msg").style.display = "inline-block";
   }
 </script>
 
