@@ -36,17 +36,18 @@
 
     /* Vignette */
     body.love-bg::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: radial-gradient(
-        circle,
-        transparent 40%,
-        rgba(0, 0, 0, 0.6) 100%
-      );
-      pointer-events: none;
-      z-index: 2;
-    }
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    circle at 30% center,
+    transparent 35%,
+    rgba(0,0,0,0.6) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
 
     /* ===== CARD ===== */
     .card {
@@ -162,6 +163,12 @@
         opacity: 0;
       }
     }
+    @media (min-width: 768px) {
+  .card {
+    transform: translateX(120px);
+  }
+}
+
   </style>
 </head>
 
