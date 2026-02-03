@@ -4,13 +4,18 @@
   <title>My Valentine ❤️</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', 'Poppins', sans-serif;
       background: #ffe6eb;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       text-align: center;
+       display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
     }
     .card {
       background: white;
@@ -85,6 +90,15 @@ body.love-bg::before {
 .love-message h2 {
   margin-bottom: 10px;
 }
+    .love-message h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.love-message p {
+  font-size: 16px;
+  line-height: 1.5;
+}
 
 @keyframes fadeIn {
   from {
@@ -104,6 +118,50 @@ body.love-bg::before {
 .love-bg::before {
   background: rgba(0, 0, 0, 0.25);
 }
+    .card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 24px;
+  padding: 30px 35px;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(255, 105, 135, 0.35);
+  max-width: 320px;
+  text-align: center;
+  animation: popIn 0.8s ease-out;
+}
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.heart {
+  position: absolute;
+  font-size: 22px;
+  animation: floatUp 4s ease-in-out infinite;
+  opacity: 0.8;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120px) scale(1.4);
+    opacity: 0;
+  }
+}
+
   </style>
 </head>
 
@@ -141,6 +199,16 @@ body.love-bg::before {
     document.body.classList.add("love-bg");
     document.getElementById("msg").style.display = "inline-block";
   }
+    setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 80 + "%";
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 4000);
+}, 600);
+
 </script>
 
 </body>
