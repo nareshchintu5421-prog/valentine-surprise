@@ -177,7 +177,17 @@ button {
   color: #333;
 }
 
+/* Move card slightly right ONLY after YES */
+body.love-bg .card {
+  transform: translateX(120px);
+  transition: transform 0.6s ease;
+}
 
+/* Default state: perfectly centered */
+.card {
+  transform: translateX(0);
+  transition: transform 0.6s ease;
+}
   </style>
 </head>
 
