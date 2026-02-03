@@ -39,28 +39,56 @@
     .no {
       background: #ddd;
     }
+    .love-bg {
+  background-image: url('wife.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+#buttons {
+  position: relative;
+  height: 60px;
+}
+
   </style>
 </head>
 
 <body>
-  <div class="card">
-    <img src="wife.jpg" alt="My Love">
-    <h2>Bhargavi, will you be my Valentine? ❤️</h2>
+  <div class="card" id="card">
+  <h2 id="question">Pooja, will you be my Valentine? ❤️</h2>
 
+  <div id="buttons">
     <button class="yes" onclick="showLove()">Yes</button>
-    <button class="no">No</button>
-
-    <p id="msg" style="display:none; font-size:18px; margin-top:20px;">
-      💖 Yayyy! <br>
-      I knew you’d say YES 😍 <br>
-      You’re my Valentine today, tomorrow & forever ❤️
-    </p>
+    <button class="no" id="noBtn">No</button>
   </div>
 
+  <p id="msg" style="display:none; font-size:20px; margin-top:20px; color:white;">
+    💖 Yayyy! <br>
+    I knew you’d say YES 😍 <br>
+    You’re my Valentine today, tomorrow & forever ❤️
+  </p>
+</div>
+
+
   <script>
-    function showLove() {
-      document.getElementById("msg").style.display = "block";
-    }
-  </script>
+  const noBtn = document.getElementById("noBtn");
+
+  noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * 200 - 100;
+    const y = Math.random() * 80 - 40;
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+  });
+
+  function showLove() {
+    const card = document.getElementById("card");
+    document.getElementById("question").style.display = "none";
+    document.getElementById("buttons").style.display = "none";
+
+    card.classList.add("love-bg");
+    document.getElementById("msg").style.display = "block";
+  }
+</script>
+
 </body>
 </html>
