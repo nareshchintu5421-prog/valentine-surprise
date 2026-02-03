@@ -12,13 +12,13 @@
 
     body {
       margin: 0;
-      font-family: 'Segoe UI', 'Poppins', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background: #ffe6eb;
-      overflow: hidden;
+  font-family: 'Segoe UI', 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #ffe6eb;
+  overflow: hidden;
     }
 
     body.love-bg {
@@ -65,6 +65,8 @@
         0 0 50px rgba(255, 90, 120, 0.35);
       animation: popIn 0.8s ease-out;
       user-select: none;
+      position: relative;
+  transform: none !important;
     }
 
     @keyframes popIn {
@@ -208,9 +210,9 @@ button {
     /* YES action */
     function showLove() {
       document.body.classList.add("love-bg");
-      document.getElementById("question").style.display = "none";
-      document.getElementById("buttons").style.display = "none";
-      document.getElementById("msg").style.display = "block";
+  document.getElementById("question").style.display = "none";
+  document.getElementById("buttons").style.display = "none";
+  document.getElementById("msg").style.display = "block";
     }
 
     /* Floating hearts */
