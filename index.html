@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Valentine ❤️</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #ffe6eb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      max-width: 320px;
+    }
+    img {
+      width: 200px;
+      border-radius: 20px;
+      margin-bottom: 15px;
+    }
+    button {
+      padding: 10px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      margin: 10px;
+    }
+    .yes {
+      background: #ff4d6d;
+      color: white;
+    }
+    .no {
+      background: #ddd;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <img src="wife.jpg" alt="My Love">
+    <h2>Bhargavi, will you be my Valentine? ❤️</h2>
+
+    <button class="yes" onclick="showLove()">Yes</button>
+    <button class="no">No</button>
+
+    <p id="msg" style="display:none; font-size:18px; margin-top:20px;">
+      💖 Yayyy! <br>
+      I knew you’d say YES 😍 <br>
+      You’re my Valentine today, tomorrow & forever ❤️
+    </p>
+  </div>
+
+  <script>
+    function showLove() {
+      document.getElementById("msg").style.display = "block";
+    }
+  </script>
+</body>
+</html>
