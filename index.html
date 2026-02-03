@@ -1,215 +1,214 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
   <title>My Valentine ❤️</title>
+
   <style>
+    /* ===== BASE ===== */
+    * {
+      box-sizing: border-box;
+    }
+
     body {
+      margin: 0;
       font-family: 'Segoe UI', 'Poppins', sans-serif;
-      background: #ffe6eb;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      text-align: center;
-       display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
+      min-height: 100vh;
+      background: #ffe6eb;
+      overflow: hidden;
     }
+
+    body.love-bg {
+      background: url('SRNU7840.JPG') center / cover no-repeat fixed;
+    }
+
+    /* Dark overlay */
+    body.love-bg::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      z-index: 1;
+    }
+
+    /* Vignette */
+    body.love-bg::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(
+        circle,
+        transparent 40%,
+        rgba(0, 0, 0, 0.6) 100%
+      );
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* ===== CARD ===== */
     .card {
-      background: white;
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      max-width: 320px;
+      position: relative;
+      z-index: 5;
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 26px;
+      padding: 32px 36px;
+      max-width: 340px;
+      text-align: center;
+      box-shadow:
+        0 25px 45px rgba(0, 0, 0, 0.45),
+        0 0 50px rgba(255, 90, 120, 0.35);
+      animation: popIn 0.8s ease-out;
+      user-select: none;
     }
-    img {
-      width: 200px;
-      border-radius: 20px;
-      margin-bottom: 15px;
+
+    @keyframes popIn {
+      from {
+        opacity: 0;
+        transform: scale(0.85);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    #buttons {
+      height: 60px;
+      position: relative;
+    }
+
     button {
-      padding: 10px 25px;
+      padding: 10px 26px;
       font-size: 16px;
       border: none;
-      border-radius: 20px;
+      border-radius: 22px;
       cursor: pointer;
-      margin: 10px;
+      margin: 8px;
     }
+
     .yes {
       background: #ff4d6d;
       color: white;
     }
+
     .no {
       background: #ddd;
     }
-    .love-bg {
-  background-image: url('SRNU7840.JPG');
-  background-size: cover;
-  background-position: center;
-  color: white;
-}
 
-#buttons {
-  position: relative;
-  height: 60px;
-}
-.card {
-  user-select: none;
-}
-    body.love-bg {
-  background-image: url('SRNU7840.JPG');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+    /* ===== LOVE MESSAGE ===== */
+    .love-message {
+      display: none;
+      margin-top: 10px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 18px;
+      padding: 22px 26px;
+      color: #fff;
+      animation: fadeIn 1s ease;
+    }
 
-body.love-bg::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-  z-index: -1;
-}
-
-
-/* Glass message box */
-.love-message {
-  display: none;
-  position: relative;
-  z-index: 2;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(8px);
-  padding: 20px 25px;
-  border-radius: 16px;
-  color: #fff;
-  animation: fadeIn 1s ease-in-out;
-}
-
-.love-message h2 {
-  margin-bottom: 10px;
-}
     .love-message h2 {
-  font-size: 26px;
-  margin-bottom: 10px;
-}
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
 
-.love-message p {
-  font-size: 16px;
-  line-height: 1.5;
-}
+    .love-message p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-.card {
-  /* width: 320px;
-  height: 420px; */
-  user-select: none;
-}
-.love-bg::before {
-  background: rgba(0, 0, 0, 0.25);
-}
-    .card {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 24px;
-  padding: 30px 35px;
-  box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.4),
-    0 0 40px rgba(255, 105, 135, 0.35);
-  max-width: 320px;
-  text-align: center;
-  animation: popIn 0.8s ease-out;
-}
-@keyframes popIn {
-  from {
-    opacity: 0;
-    transform: scale(0.85);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-.heart {
-  position: absolute;
-  font-size: 22px;
-  animation: floatUp 4s ease-in-out infinite;
-  opacity: 0.8;
-}
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
 
-@keyframes floatUp {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-120px) scale(1.4);
-    opacity: 0;
-  }
-}
+    /* ===== HEARTS ===== */
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 22px;
+      animation: floatUp 5s linear infinite;
+      opacity: 0.85;
+      z-index: 3;
+      pointer-events: none;
+    }
 
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+      }
+      15% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120vh) scale(1.4);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <div class="card" id="card">
-  <h2 id="question">Bhargavi, will you be my Valentine? ❤️</h2>
 
-  <div id="buttons">
-    <button class="yes" onclick="showLove()">Yes</button>
-    <button class="no" id="noBtn">No</button>
+  <div class="card" id="card">
+    <h2 id="question">Bhargavi, will you be my Valentine? ❤️</h2>
+
+    <div id="buttons">
+      <button class="yes" onclick="showLove()">Yes</button>
+      <button class="no" id="noBtn">No</button>
+    </div>
+
+    <div id="msg" class="love-message">
+      <h2>💖 Yayyy!</h2>
+      <p>I knew you’d say YES 😍</p>
+      <p>You’re my Valentine today,<br>tomorrow & forever ❤️</p>
+    </div>
   </div>
 
- <div id="msg" class="love-message">
-  <h2>💖 Yayyy!</h2>
-  <p>I knew you’d say YES 😍</p>
-  <p>You’re my Valentine today,<br>tomorrow & forever ❤️</p>
-</div>
-</div>
-
-
   <script>
-  const noBtn = document.getElementById("noBtn");
+    /* NO button escape 😄 */
+    const noBtn = document.getElementById("noBtn");
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 80 - 40;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
 
-  noBtn.addEventListener("mouseover", () => {
-    const x = Math.random() * 200 - 100;
-    const y = Math.random() * 80 - 40;
-    noBtn.style.transform = `translate(${x}px, ${y}px)`;
-  });
+    /* YES action */
+    function showLove() {
+      document.body.classList.add("love-bg");
+      document.getElementById("question").style.display = "none";
+      document.getElementById("buttons").style.display = "none";
+      document.getElementById("msg").style.display = "block";
+    }
 
-  function showLove() {
-    const card = document.getElementById("card");
-    document.getElementById("question").style.display = "none";
-    document.getElementById("buttons").style.display = "none";
-
-    document.body.classList.add("love-bg");
-    document.getElementById("msg").style.display = "inline-block";
-  }
+    /* Floating hearts */
     setInterval(() => {
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerHTML = "❤️";
-  heart.style.left = Math.random() * 80 + "%";
-  document.body.appendChild(heart);
-
-  setTimeout(() => heart.remove(), 4000);
-}, 600);
-
-</script>
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }, 700);
+  </script>
 
 </body>
 </html>
