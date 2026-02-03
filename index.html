@@ -206,6 +206,19 @@ body.love-bg .card {
     transform: translateX(15vw) !important;
   }
 }
+    /* Default: center */
+body {
+  justify-content: center;
+}
+
+/* After YES: move card right on MOBILE */
+@media (max-width: 767px) {
+  body.love-bg {
+    justify-content: flex-start;
+    padding-left: 15vw;
+  }
+}
+
 
   </style>
 </head>
